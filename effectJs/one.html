@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>1</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        body {
+            background: #111;
+        }
+
+        section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        section h2 {
+            position: relative;
+            color: #fff;
+            font-size: 90px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container-fluid text-center">
+        <img src="img/1.png" data-speed="-5" class="layer">
+        <img src="img/2.png" data-speed="5" class="layer">
+        <img src="img/3.png" data-speed="2" class="layer">
+        <img src="img/4.png" data-speed="6" class="layer">
+        <img src="img/5.png" data-speed="8" class="layer">
+        <img src="img/6.png" data-speed="-2" class="layer">
+        <img src="img/7.png" data-speed="4" class="layer">
+        <img src="img/8.png" data-speed="-9" class="layer">
+        <img src="img/9.png" data-speed="6" class="layer">
+        <img src="img/10.png" data-speed="-7" class="layer">
+        <img src="img/11.png" data-speed="-5" class="layer">
+        <img src="img/12.png" data-speed="5" class="layer">
+        <h2 class="layer" data-speed="2">Parallax</h2>
+    </section>
+
+
+
+
+
+    <script>
+        document.addEventListener("mousemove", parallax);
+        function parallax(e) {
+
+            this.querySelectorAll('.layer').forEach(layer => {
+
+                const speed = layer.getAttribute('data-speed');
+                const x = (window.innerWidth - e.pageX * speed)/100;
+                const y = (window.innerHeight - e.pageY * speed)/100;
+
+                layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+
+            });
+        }
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
